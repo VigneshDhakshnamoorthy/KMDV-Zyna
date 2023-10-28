@@ -35,6 +35,7 @@ public class TestngConfig implements ITestListener {
 			Ereport.createTest(result.getName());
 		}
 	}
+	
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
