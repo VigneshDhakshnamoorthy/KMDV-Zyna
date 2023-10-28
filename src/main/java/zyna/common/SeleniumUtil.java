@@ -29,6 +29,8 @@ import org.testng.Reporter;
 
 import com.aventstack.extentreports.ExtentTest;
 
+import zyna.config.BrowserConfig;
+
 public class SeleniumUtil {
 
 	private WebDriver driver;
@@ -40,8 +42,15 @@ public class SeleniumUtil {
 		this.driver = dr;
 		this.Etest = ext;
 		this.waitTime = wait_Time;
-
-		this.testNAme = Reporter.getCurrentTestResult().getName();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+	}
+	
+	public SeleniumUtil(String BrowserName,ExtentTest ext, int wait_Time) {
+		this.driver = new BrowserConfig().getBrowser(BrowserName);
+		this.Etest = ext;
+		this.waitTime = wait_Time;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -69,6 +78,10 @@ public class SeleniumUtil {
 
 	public void open(String URLWeb) {
 		driver.get(URLWeb);
+	}
+	
+	public void quit() {
+		driver.quit();
 	}
 
 	public WebDriver getDriver() {

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MySuite" parallel="methods" thread-count="2" data-provider-thread-count="2">
+    <test name="MyTest">
+        <packages>
+            <package name="sample" />
+        </packages>
+    </test>
+</suite>

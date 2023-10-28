@@ -13,29 +13,38 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import zyna.base.TestBase;
+import zyna.common.SeleniumUtil;
 
-public class TestngConfig implements ITestListener {
+public class TestngConfig extends TestBase implements ITestListener {
 
 	private ExtentReports Ereport;
 	private ExtentSparkReporter Espark;
 	private File projectPathRoot = new File(System.getProperty("user.dir"));
 	private File reportRoot = new File(projectPathRoot, "Report");
 	private HashMap<String, ExtentTest> ExT = new HashMap<String, ExtentTest>();
+
 	@Override
-	public void onTestStart(ITestResult result) {
+	public  void onTestStart(ITestResult result) {
 		Object[] parameters = result.getParameters();
 		if (parameters != null && parameters.length > 0) {
-			if(ExT.containsKey(result.getName())){
-				ExT.get(result.getName()).createNode(parameters[0].toString());
-			}else {
-				ExT.put(result.getName(),Ereport.createTest(result.getName()));
-				ExT.get(result.getName()).createNode(parameters[0].toString());
-			}
-		}else {
-			Ereport.createTest(result.getName());
+	
+			setSelenium(new SeleniumUtil(parameters[0].toString(),
+					getExT(result.getName()).createNode(parameters[0].toString()), 15));
+		} else {
+
+			setSelenium(new SeleniumUtil(parameters[0].toString(), Ereport.createTest(result.getName()), 15));
 		}
+
+		getSelenium().Log(result.getName());
+
 	}
 	
+	public synchronized ExtentTest getExT(String resultName) {
+		if (!ExT.containsKey(resultName)) {
+			ExT.put(resultName, Ereport.createTest(resultName));
+		}
+		return ExT.get(resultName);
+	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
