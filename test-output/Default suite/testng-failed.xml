@@ -9,7 +9,7 @@
           <include name="afterMethod"/>
           <include name="beforeSuite"/>
           <include name="afterTest"/>
-          <include name="sample1" invocation-numbers="0"/>
+          <include name="sample1" invocation-numbers="1"/>
           <include name="afterClass"/>
           <include name="afterSuite"/>
           <include name="beforeMethod"/>

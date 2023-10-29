@@ -4,9 +4,11 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.SkipException;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -17,33 +19,22 @@ import zyna.common.SeleniumUtil;
 
 public class TestngConfig extends TestBase implements ITestListener {
 
-	private ExtentReports Ereport;
-	private ExtentSparkReporter Espark;
-	private File projectPathRoot = new File(System.getProperty("user.dir"));
-	private File reportRoot = new File(projectPathRoot, "Report");
-	private HashMap<String, ExtentTest> ExT = new HashMap<String, ExtentTest>();
-
 	@Override
-	public  void onTestStart(ITestResult result) {
+	public void onTestStart(ITestResult result) {
 		Object[] parameters = result.getParameters();
-		if (parameters != null && parameters.length > 0) {
-	
-			setSelenium(new SeleniumUtil(parameters[0].toString(),
-					getExT(result.getName()).createNode(parameters[0].toString()), 15));
-		} else {
+		String BName = parameters[0].toString();
+		try {
+			WebDriver WebD = new BrowserConfig().getBrowser(BName);
+			if (parameters != null && parameters.length > 0) {
+				setSelenium(new SeleniumUtil(getExT(result.getName()).createNode(BName), WebD, BName, 15));
+			} else {
+				setSelenium(new SeleniumUtil(Ereport.createTest(result.getName()), WebD, BName, 15));
+			}
+		} catch (Exception e) {
+			setSelenium(new SeleniumUtil(getExT(result.getName()).createNode(BName), 15));
+			throw new SkipException(e.toString());
 
-			setSelenium(new SeleniumUtil(parameters[0].toString(), Ereport.createTest(result.getName()), 15));
 		}
-
-		getSelenium().Log(result.getName());
-
-	}
-	
-	public synchronized ExtentTest getExT(String resultName) {
-		if (!ExT.containsKey(resultName)) {
-			ExT.put(resultName, Ereport.createTest(resultName));
-		}
-		return ExT.get(resultName);
 	}
 
 	@Override

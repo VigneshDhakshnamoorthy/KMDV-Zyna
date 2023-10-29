@@ -18,18 +18,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.Reporter;
-
 import com.aventstack.extentreports.ExtentTest;
-
-import zyna.config.BrowserConfig;
+import com.aventstack.extentreports.model.ExceptionInfo;
+import com.aventstack.extentreports.model.service.ExceptionInfoService;
 
 public class SeleniumUtil {
 
@@ -38,7 +38,7 @@ public class SeleniumUtil {
 	private String testNAme;
 	private int waitTime;
 
-	public SeleniumUtil(WebDriver dr, ExtentTest ext, String BrowserName, int wait_Time) {
+	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time) {
 		this.driver = dr;
 		this.Etest = ext;
 		this.waitTime = wait_Time;
@@ -46,14 +46,10 @@ public class SeleniumUtil {
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 	}
-	
-	public SeleniumUtil(String BrowserName,ExtentTest ext, int wait_Time) {
-		this.driver = new BrowserConfig().getBrowser(BrowserName);
+
+	public SeleniumUtil(ExtentTest ext, int wait_Time) {
 		this.Etest = ext;
 		this.waitTime = wait_Time;
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
 	}
 
 	public String getBrowserImage(String BrowserName) {
@@ -79,7 +75,7 @@ public class SeleniumUtil {
 	public void open(String URLWeb) {
 		driver.get(URLWeb);
 	}
-	
+
 	public void quit() {
 		driver.quit();
 	}
@@ -102,6 +98,38 @@ public class SeleniumUtil {
 		logExtent(logMessage);
 	}
 
+	public void addScreenshot() {
+		String base64img = "data:image/png;base64," + getScreenshot();
+		String base64imgA = "<a href=\"" + base64img
+				+ "\" data-featherlight=\"image\"><span class=\"badge log fail-bg\">Screenshot Click"
+				+ " Here</span></a>";
+		logExtent(base64imgA);
+	}
+
+	public void addFailScreenshot(Throwable throwable) {
+		String base64img = "data:image/png;base64," + getScreenshot();
+		String base64imgA = "<a href=\"" + base64img
+				+ "\" data-featherlight=\"image\"><span class=\"badge log fail-bg\">Screenshot Click"
+				+ " Here</span></a>";
+		ExceptionInfo exceptionInfo = ExceptionInfoService.createExceptionInfo(throwable);
+		String getErrorMessage = "<strong>" + throwable.toString() + "</strong>";
+		String stackTrace = "<textarea readonly=\"\" class=\"code-block\">" + exceptionInfo.getStackTrace()
+				+ "</textarea>";
+		logFailExtent(getErrorMessage + "<br>"+ base64imgA + "<br>" + stackTrace);
+	}
+	
+	public void addSkipExtent(Throwable throwable) {
+		ExceptionInfo exceptionInfo = ExceptionInfoService.createExceptionInfo(throwable);
+		String getErrorMessage = "<strong>" + throwable.getMessage().toString() + "</strong>";
+		String stackTrace = "<textarea readonly=\"\" class=\"code-block\">" + exceptionInfo.getStackTrace()
+				+ "</textarea>";
+		logSkipExtent(getErrorMessage + "<br>" + stackTrace);
+	}
+
+	public String getScreenshot() {
+		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	}
+
 	public void logConsole(Object logMessage) {
 		System.out.println(logMessage.toString());
 	}
@@ -116,6 +144,16 @@ public class SeleniumUtil {
 
 	public void logExtent(Object[] logMessage) {
 		Etest.pass(Arrays.toString(logMessage));
+	}
+
+	public void logSkipExtent(Object logMessage) {
+		Etest.skip(logMessage.toString());
+	}
+	
+	
+
+	public void logFailExtent(Object logMessage) {
+		Etest.fail(logMessage.toString());
 	}
 
 	public void logList(List<WebElement> ListWebelement) {

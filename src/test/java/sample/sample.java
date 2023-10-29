@@ -1,5 +1,6 @@
 package sample;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import zyna.base.TestBase;
@@ -16,6 +17,7 @@ public class sample extends TestBase {
    	public void sample2(String browserName) {
     	getSelenium().open("http://www.google.com");
     	getSelenium().Log(browserName);
+    	Assert.assertTrue(false);
    	}
     
     @Test(dataProvider = "browsers")
