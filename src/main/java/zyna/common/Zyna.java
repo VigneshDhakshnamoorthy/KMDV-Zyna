@@ -7,9 +7,9 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Author {
+public @interface Zyna {
 
 
-	public String Name();
+	public String AuthorName();
 	
 }

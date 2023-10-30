@@ -2,7 +2,7 @@
 <suite name="MySuite" parallel="methods" thread-count="2" data-provider-thread-count="2">
     <test name="MyTest">
         <packages>
-            <package name="sample" />
+            <package name="testCases" />
         </packages>
     </test>
 </suite>

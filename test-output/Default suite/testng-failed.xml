@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sample.sample">
+      <class name="testCases.sample">
         <methods>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="sample1" invocation-numbers="1"/>
           <include name="beforeSuite"/>
           <include name="afterTest"/>
-          <include name="sample1" invocation-numbers="1"/>
           <include name="afterClass"/>
           <include name="afterSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- sample.sample -->
+      </class> <!-- testCases.sample -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

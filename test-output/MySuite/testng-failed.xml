@@ -3,20 +3,20 @@
 <suite thread-count="2" parallel="methods" data-provider-thread-count="2" name="Failed suite [MySuite]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="methods" name="MyTest(failed)">
     <classes>
-      <class name="sample.sample">
+      <class name="testCases.sample">
         <methods>
           <include name="afterMethod"/>
           <include name="beforeTest"/>
-          <include name="beforeSuite"/>
-          <include name="afterTest"/>
           <include name="sample1" invocation-numbers="1"/>
           <include name="sample2" invocation-numbers="0 1 2"/>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
           <include name="afterClass"/>
           <include name="afterSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- sample.sample -->
+      </class> <!-- testCases.sample -->
     </classes>
   </test> <!-- MyTest(failed) -->
 </suite> <!-- Failed suite [MySuite] -->

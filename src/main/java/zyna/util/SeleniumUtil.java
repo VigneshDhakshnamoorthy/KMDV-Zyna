@@ -75,9 +75,10 @@ public class SeleniumUtil {
 	}
 
 	public void open(String URLWeb) {
+		LogInfo(BrowserName + " >> Opening URL : " + URLWeb);
 		driver.get(URLWeb);
 	}
-
+	
 	public void quit() {
 		driver.quit();
 	}
@@ -85,7 +86,7 @@ public class SeleniumUtil {
 	public WebDriver getDriver() {
 		return driver;
 	}
-	
+
 	public String getBrowserName() {
 		return BrowserName;
 	}
@@ -96,28 +97,38 @@ public class SeleniumUtil {
 
 	public void Log(Object logMessage) {
 		logConsole(logMessage);
-		logExtent(logMessage);
+		logPassExtent(logMessage);
 	}
 
 	public void Log(Object[] logMessage) {
 		logConsole(logMessage);
-		logExtent(logMessage);
+		logPassExtent(logMessage);
+	}
+
+	public void LogInfo(Object logMessage) {
+		logConsole(logMessage);
+		logInfoExtent(logMessage);
+	}
+
+	public void LogInfo(Object[] logMessage) {
+		logConsole(logMessage);
+		logInfoExtent(logMessage);
 	}
 
 	public void addScreenshot() {
 		String base64img = "data:image/png;base64," + getScreenshot();
 		String base64imgA = "<a href=\"" + base64img
-				+ "\" data-featherlight=\"image\"><span class=\"badge log pass-bg\">Screenshot Click"
+				+ "\" data-featherlight=\"image\"><span class=\"badge log info-bg\">Screenshot Click"
 				+ " Here</span></a>";
-		logExtent(base64imgA);
+		logInfoExtent(base64imgA);
 	}
-	
+
 	public void addElementScreenshot(By by) {
 		String base64img = "data:image/png;base64," + getScreenshot(by);
 		String base64imgA = "<a href=\"" + base64img
-				+ "\" data-featherlight=\"image\"><span class=\"badge log pass-bg\">Element Screenshot Click"
+				+ "\" data-featherlight=\"image\"><span class=\"badge log info-bg\">Element Screenshot Click"
 				+ " Here</span></a>";
-		logExtent(base64imgA);
+		logInfoExtent(base64imgA);
 	}
 
 	public void addFailScreenshot(Throwable throwable) {
@@ -129,9 +140,9 @@ public class SeleniumUtil {
 		String getErrorMessage = "<strong>" + throwable.toString() + "</strong>";
 		String stackTrace = "<textarea readonly=\"\" class=\"code-block\">" + exceptionInfo.getStackTrace()
 				+ "</textarea>";
-		logFailExtent(getErrorMessage + "<br>"+ base64imgA + "<br>" + stackTrace);
+		logFailExtent(getErrorMessage + "<br>" + base64imgA + "<br>" + stackTrace);
 	}
-	
+
 	public void addSkipExtent(Throwable throwable) {
 		ExceptionInfo exceptionInfo = ExceptionInfoService.createExceptionInfo(throwable);
 		String getErrorMessage = "<strong>" + throwable.getMessage().toString() + "</strong>";
@@ -143,7 +154,7 @@ public class SeleniumUtil {
 	public String getScreenshot() {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 	}
-	
+
 	public String getScreenshot(By by) {
 		return ((TakesScreenshot) getElement(by)).getScreenshotAs(OutputType.BASE64);
 	}
@@ -156,19 +167,25 @@ public class SeleniumUtil {
 		System.out.println(Arrays.toString(logMessage));
 	}
 
-	public void logExtent(Object logMessage) {
+	public void logPassExtent(Object logMessage) {
 		Etest.pass(logMessage.toString());
 	}
 
-	public void logExtent(Object[] logMessage) {
+	public void logPassExtent(Object[] logMessage) {
 		Etest.pass(Arrays.toString(logMessage));
+	}
+
+	public void logInfoExtent(Object logMessage) {
+		Etest.info(logMessage.toString());
+	}
+
+	public void logInfoExtent(Object[] logMessage) {
+		Etest.info(Arrays.toString(logMessage));
 	}
 
 	public void logSkipExtent(Object logMessage) {
 		Etest.skip(logMessage.toString());
 	}
-	
-	
 
 	public void logFailExtent(Object logMessage) {
 		Etest.fail(logMessage.toString());
@@ -191,12 +208,12 @@ public class SeleniumUtil {
 	}
 
 	public void logEList(List<WebElement> ListWebelement) {
-		logExtent(getList(ListWebelement).toArray());
+		logInfoExtent(getList(ListWebelement).toArray());
 
 	}
 
 	public void logEList(By by) {
-		logExtent(getList(by).toArray());
+		logInfoExtent(getList(by).toArray());
 
 	}
 
