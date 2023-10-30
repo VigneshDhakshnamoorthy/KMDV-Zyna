@@ -1,63 +1,381 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="3" failed="2" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-30T18:56:26 IST" name="Default suite" finished-at="2023-10-30T18:56:45 IST" duration-ms="19772">
+  <suite started-at="2023-10-30T21:33:37 IST" name="MySuite" finished-at="2023-10-30T21:34:04 IST" duration-ms="27490">
     <groups>
     </groups>
-    <test started-at="2023-10-30T18:56:26 IST" name="Default test" finished-at="2023-10-30T18:56:45 IST" duration-ms="19772">
+    <test started-at="2023-10-30T21:33:37 IST" name="MyTest" finished-at="2023-10-30T21:34:04 IST" duration-ms="27490">
       <class name="testCases.sample">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:26 IST" name="beforeSuite" finished-at="2023-10-30T18:56:26 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeSuite" finished-at="2023-10-30T21:33:37 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:26 IST" name="beforeTest" finished-at="2023-10-30T18:56:26 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeTest" finished-at="2023-10-30T21:33:37 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:26 IST" name="beforeClass" finished-at="2023-10-30T18:56:26 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeClass" finished-at="2023-10-30T21:33:37 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:26 IST" name="beforeMethod" finished-at="2023-10-30T18:56:26 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeMethod" finished-at="2023-10-30T21:33:37 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample3()[pri:0, instance:testCases.sample@1349883] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="sample3()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:26 IST" name="sample3" finished-at="2023-10-30T18:56:45 IST" duration-ms="19300" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sample3 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:45 IST" name="afterMethod" finished-at="2023-10-30T18:56:45 IST" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeMethod" finished-at="2023-10-30T21:33:37 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=sample3 status=SUCCESS method=sample.sample3()[pri:0, instance:testCases.sample@1349883] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeMethod" finished-at="2023-10-30T21:33:37 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="beforeMethod" finished-at="2023-10-30T21:33:37 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="sample1" data-provider="browsers" finished-at="2023-10-30T21:33:58 IST" duration-ms="20476" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample1 -->
+        <test-method signature="sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="sample2" data-provider="browsers" finished-at="2023-10-30T21:33:38 IST" duration-ms="379" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Safari]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [--browser, safari, --output, json]
+safaridriver not available for download
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: driver.version: SafariDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [--browser, safari, --output, json]
+safaridriver not available for download
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: driver.version: SafariDriver
+at zyna.base.TestBase.initWeb(TestBase.java:127)
+at zyna.config.TestngConfig.onTestStart(TestngConfig.java:21)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:115)
+at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:262)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:625)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample2 -->
+        <test-method signature="sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="sample1" data-provider="browsers" finished-at="2023-10-30T21:33:38 IST" duration-ms="379" status="SKIP">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Safari]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.testng.SkipException">
+            <message>
+              <![CDATA[org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [--browser, safari, --output, json]
+safaridriver not available for download
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: driver.version: SafariDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.SkipException: org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [--browser, safari, --output, json]
+safaridriver not available for download
+Build info: version: '4.14.1', revision: '03f8ede370'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: driver.version: SafariDriver
+at zyna.base.TestBase.initWeb(TestBase.java:127)
+at zyna.config.TestngConfig.onTestStart(TestngConfig.java:21)
+at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:115)
+at org.testng.internal.invokers.TestInvoker.runTestResultListener(TestInvoker.java:262)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:625)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.SkipException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample1 -->
+        <test-method signature="sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:37 IST" name="sample2" data-provider="browsers" finished-at="2023-10-30T21:33:41 IST" duration-ms="3929" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at testCases.sample.sample2(sample.java:24)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample2 -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="afterMethod" finished-at="2023-10-30T21:33:38 IST" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample2 status=SKIP method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:45 IST" name="afterClass" finished-at="2023-10-30T18:56:45 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="afterMethod" finished-at="2023-10-30T21:33:38 IST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample1 status=SKIP method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="beforeMethod" finished-at="2023-10-30T21:33:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="beforeMethod" finished-at="2023-10-30T21:33:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="sample1" data-provider="browsers" finished-at="2023-10-30T21:34:00 IST" duration-ms="22033" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample1 -->
+        <test-method signature="sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:38 IST" name="sample2" data-provider="browsers" finished-at="2023-10-30T21:33:45 IST" duration-ms="7406" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at testCases.sample.sample2(sample.java:24)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample2 -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:41 IST" name="afterMethod" finished-at="2023-10-30T21:33:42 IST" duration-ms="522" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample2 status=FAILURE method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:45 IST" name="afterMethod" finished-at="2023-10-30T21:33:46 IST" duration-ms="936" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample2 status=FAILURE method=sample.sample2(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:46 IST" name="beforeMethod" finished-at="2023-10-30T21:33:46 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=sample.sample3()[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="sample3()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:46 IST" name="sample3" finished-at="2023-10-30T21:34:04 IST" duration-ms="18236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample3 -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:33:58 IST" name="afterMethod" finished-at="2023-10-30T21:33:58 IST" duration-ms="231" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample1 status=SUCCESS method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:34:00 IST" name="afterMethod" finished-at="2023-10-30T21:34:01 IST" duration-ms="953" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample1 status=SUCCESS method=sample.sample1(java.lang.String)[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:34:04 IST" name="afterMethod" finished-at="2023-10-30T21:34:04 IST" duration-ms="302" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=sample3 status=SUCCESS method=sample.sample3()[pri:0, instance:testCases.sample@2767e23c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:34:04 IST" name="afterClass" finished-at="2023-10-30T21:34:04 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:45 IST" name="afterTest" finished-at="2023-10-30T18:56:45 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:34:04 IST" name="afterTest" finished-at="2023-10-30T21:34:04 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testCases.sample@1349883]" started-at="2023-10-30T18:56:46 IST" name="afterSuite" finished-at="2023-10-30T18:56:46 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testCases.sample@2767e23c]" started-at="2023-10-30T21:34:05 IST" name="afterSuite" finished-at="2023-10-30T21:34:05 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- testCases.sample -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- MyTest -->
+  </suite> <!-- MySuite -->
 </testng-results>

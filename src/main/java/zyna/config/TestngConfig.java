@@ -18,25 +18,7 @@ public class TestngConfig extends TestBase implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		Object[] parameters = result.getParameters();
-		String[] testCaseInformation = getInfo(result);
-		String BName = null;
-		WebDriver WebD = null;
-		try {
-			if (parameters != null && parameters.length > 0) {
-				BName = parameters[0].toString();
-				WebD = new BrowserConfig().getBrowser(BName);
-				setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), WebD, BName, 15));
-			} else {
-				BName = "Edge";
-				WebD = new BrowserConfig().getBrowser(BName);
-				setSelenium(new SeleniumUtil(getExT(testCaseInformation), WebD, BName, 15));
-			}
-		} catch (Exception e) {
-			setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), 15));
-			throw new SkipException(e.toString());
-
-		}
+		initWeb(result);
 	}
 
 	@Override
@@ -58,7 +40,7 @@ public class TestngConfig extends TestBase implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
-		String ReportPath = new File(reportRoot, "Extent.html").getAbsolutePath();
+		String ReportPath = new File(extentReportRoot, "Extent.html").getAbsolutePath();
 		Ereport = new ExtentReports();
 		Espark = new ExtentSparkReporter(ReportPath);
 		Espark.config().setDocumentTitle(projectPathRoot.getName().toString());

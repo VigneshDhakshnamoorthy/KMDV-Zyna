@@ -3,8 +3,10 @@ package zyna.base;
 import java.io.File;
 import java.util.HashMap;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -21,6 +23,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import zyna.common.Zyna;
+import zyna.config.BrowserConfig;
 import zyna.config.TestngConfig;
 import zyna.util.SeleniumUtil;
 
@@ -32,7 +35,8 @@ public class TestBase {
 	protected static ExtentReports Ereport;
 	protected static ExtentSparkReporter Espark;
 	protected static File projectPathRoot = new File(System.getProperty("user.dir"));
-	protected static File reportRoot = new File(projectPathRoot, "Report");
+	protected static File reportRoot = new File(projectPathRoot, "Reports");
+	protected static File extentReportRoot = new File(reportRoot, "ExtentReports");
 
 	@BeforeTest
 	public void beforeTest() {
@@ -102,6 +106,28 @@ public class TestBase {
 	public synchronized static void setSelenium(SeleniumUtil seleniumUtil) {
 		sel.set(seleniumUtil);
 	}
+	
+	public void initWeb(ITestResult result) {
+		Object[] parameters = result.getParameters();
+		String[] testCaseInformation = getInfo(result);
+		String BName = null;
+		WebDriver WebD = null;
+		try {
+			if (parameters != null && parameters.length > 0) {
+				BName = parameters[0].toString();
+				WebD = new BrowserConfig().getBrowser(BName);
+				setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), WebD, BName, 15));
+			} else {
+				BName = "Edge";
+				WebD = new BrowserConfig().getBrowser(BName);
+				setSelenium(new SeleniumUtil(getExT(testCaseInformation), WebD, BName, 15));
+			}
+		} catch (Exception e) {
+			setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), 15));
+			throw new SkipException(e.toString());
+
+		}
+	}
 
 	@DataProvider(name = "browsers", parallel = true)
 	public synchronized Object[][] getBrowsers() {
@@ -124,4 +150,5 @@ public class TestBase {
 			return infoNames;
 		}
 	}
+	
 }

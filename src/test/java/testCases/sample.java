@@ -14,8 +14,8 @@ public class sample extends TestBase {
 	public void sample1(String browserName) {
 		CheckoutOverview checkoutOverview = new CheckoutOverview();
 		checkoutOverview.openApp("https://www.saucedemo.com/");
-		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1)
-		.clickonCart().QTYcounitem(1).clickCheckout().sleep(10);
+		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1).clickonCart().QTYcounitem(1)
+				.clickCheckout().sleep(10);
 	}
 
 	@Test(dataProvider = "browsers")
@@ -29,7 +29,7 @@ public class sample extends TestBase {
 	public void sample3() {
 		CheckoutOverview checkoutOverview = new CheckoutOverview();
 		checkoutOverview.openApp("https://www.saucedemo.com/");
-		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1)
-		.clickonCart().QTYcounitem(1).clickCheckout().sleep(10);
+		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1).clickonCart().QTYcounitem(1)
+				.clickCheckout().sleep(10);
 	}
 }
