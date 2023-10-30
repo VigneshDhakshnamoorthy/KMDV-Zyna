@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 2 failed,  3 skipped,  4 passed</span>
+                    <span class="method-stats">7 methods, 2 failed,  2 skipped,  3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -130,11 +130,6 @@
                         <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample2(Safari)">sample2(Safari)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample3(Safari)">sample3(Safari)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content skipped suite-MySuite -->
                   </li>
                   <li>
@@ -146,22 +141,17 @@
                     <div class="method-list-content passed suite-MySuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample1(Firefox)">sample1(Firefox)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample1(Chrome)">sample1(Chrome)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample3(Firefox)">sample3(Firefox)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample1(Firefox)">sample1(Firefox)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample3(Chrome)">sample3(Chrome)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-MySuite" title="sample.sample" class="method navigator-link" hash-for-method="sample3">sample3</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-MySuite -->
@@ -189,7 +179,7 @@
                   <span class="method-name">sample2</span>
                   <span class="parameters">(Firefox)</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at sample.sample.sample2(sample.java:20)
+	at sample.sample.sample2(sample.java:22)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
@@ -207,7 +197,7 @@
                   <span class="method-name">sample2</span>
                   <span class="parameters">(Chrome)</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at sample.sample.sample2(sample.java:20)
+	at sample.sample.sample2(sample.java:22)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
@@ -237,7 +227,7 @@ safaridriver not available for download
 Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
 Driver info: driver.version: SafariDriver
-	at zyna.config.TestngConfig.onTestStart(TestngConfig.java:35)
+	at zyna.config.TestngConfig.onTestStart(TestngConfig.java:36)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
@@ -259,29 +249,7 @@ safaridriver not available for download
 Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
 Driver info: driver.version: SafariDriver
-	at zyna.config.TestngConfig.onTestStart(TestngConfig.java:35)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 6 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="sample3(Safari)">
-                  </a> <!-- sample3(Safari) -->
-                  <span class="method-name">sample3</span>
-                  <span class="parameters">(Safari)</span>
-                  <div class="stack-trace">org.testng.SkipException: org.openqa.selenium.remote.NoSuchDriverException: Unable to obtain: Capabilities {browserName: safari}, error Command failed with code: 65, executed: [--browser, safari, --output, json]
-safaridriver not available for download
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: driver.version: SafariDriver
-	at zyna.config.TestngConfig.onTestStart(TestngConfig.java:35)
+	at zyna.config.TestngConfig.onTestStart(TestngConfig.java:36)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
@@ -302,14 +270,6 @@ Driver info: driver.version: SafariDriver
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="sample1(Firefox)">
-                  </a> <!-- sample1(Firefox) -->
-                  <span class="method-name">sample1</span>
-                  <span class="parameters">(Firefox)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="sample1(Chrome)">
                   </a> <!-- sample1(Chrome) -->
                   <span class="method-name">sample1</span>
@@ -318,18 +278,17 @@ Driver info: driver.version: SafariDriver
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="sample3(Firefox)">
-                  </a> <!-- sample3(Firefox) -->
-                  <span class="method-name">sample3</span>
+                  <a name="sample1(Firefox)">
+                  </a> <!-- sample1(Firefox) -->
+                  <span class="method-name">sample1</span>
                   <span class="parameters">(Firefox)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="sample3(Chrome)">
-                  </a> <!-- sample3(Chrome) -->
+                  <a name="sample3">
+                  </a> <!-- sample3 -->
                   <span class="method-name">sample3</span>
-                  <span class="parameters">(Chrome)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -389,48 +348,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'sample2')
 data.setCell(0, 2, 'sample.sample')
-data.setCell(0, 3, 7187);
+data.setCell(0, 3, 8079);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'sample1')
 data.setCell(1, 2, 'sample.sample')
-data.setCell(1, 3, 7083);
+data.setCell(1, 3, 7419);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'sample1')
+data.setCell(2, 1, 'sample2')
 data.setCell(2, 2, 'sample.sample')
-data.setCell(2, 3, 5903);
+data.setCell(2, 3, 5514);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'sample2')
+data.setCell(3, 1, 'sample1')
 data.setCell(3, 2, 'sample.sample')
-data.setCell(3, 3, 5892);
+data.setCell(3, 3, 5393);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'sample3')
 data.setCell(4, 2, 'sample.sample')
-data.setCell(4, 3, 5214);
+data.setCell(4, 3, 2808);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'sample3')
+data.setCell(5, 1, 'sample1')
 data.setCell(5, 2, 'sample.sample')
-data.setCell(5, 3, 4233);
+data.setCell(5, 3, 1131);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'sample2')
 data.setCell(6, 2, 'sample.sample')
-data.setCell(6, 3, 588);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'sample1')
-data.setCell(7, 2, 'sample.sample')
-data.setCell(7, 3, 588);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'sample3')
-data.setCell(8, 2, 'sample.sample')
-data.setCell(8, 3, 256);
+data.setCell(6, 3, 1131);
 window.suiteTableData['MySuite']= { tableData: data, tableDiv: 'times-div-MySuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 36 seconds</span>
+              <span class="suite-total-time">Total running time: 31 seconds</span>
               <div id="times-div-MySuite">
               </div> <!-- times-div-MySuite -->
             </div> <!-- times-div -->
@@ -463,135 +414,111 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">352 ms</span>
+                <span class="method-start">239 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">369 ms</span>
+                <span class="method-start">249 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">387 ms</span>
+                <span class="method-start">260 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">387 ms</span>
+                <span class="method-start">260 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">387 ms</span>
+                <span class="method-start">260 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">387 ms</span>
+                <span class="method-start">260 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">sample1(Chrome)</span>
-                <span class="method-start">390 ms</span>
-              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">sample1(Safari)</span>
-                <span class="method-start">390 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">sample2(Safari)</span>
-                <span class="method-start">390 ms</span>
+                <span class="method-start">262 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">sample2(Chrome)</span>
-                <span class="method-start">390 ms</span>
+                <span class="method-start">262 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sample1(Chrome)</span>
+                <span class="method-start">262 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sample2(Safari)</span>
+                <span class="method-start">262 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=sample2 status=SKIP method=sample.sample2(java.lang.String)[pri:0, instance:sample....)</span>
-                <span class="method-start">987 ms</span>
+                <span class="method-start">1398 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=sample1 status=SKIP method=sample.sample1(java.lang.String)[pri:0, instance:sample....)</span>
-                <span class="method-start">988 ms</span>
+                <span class="method-start">1398 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">997 ms</span>
+                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:sampl...)</span>
+                <span class="method-start">1407 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample2(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">997 ms</span>
+                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample1(java.lang.String)[pri:0, instance:sampl...)</span>
+                <span class="method-start">1407 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">sample1(Firefox)</span>
-                <span class="method-start">998 ms</span>
-              </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">sample2(Firefox)</span>
-                <span class="method-start">998 ms</span>
+                <span class="method-start">1407 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sample1(Firefox)</span>
+                <span class="method-start">1407 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=sample2 status=FAILURE method=sample.sample2(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">6287 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=sample1 status=SUCCESS method=sample.sample1(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">6295 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=sample1 status=SUCCESS method=sample.sample1(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">8084 ms</span>
+                <span class="method-start">5656 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=sample2 status=FAILURE method=sample.sample2(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">8188 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample3(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">9533 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample3(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">9533 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">sample3(Safari)</span>
-                <span class="method-start">9534 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">sample3(Chrome)</span>
-                <span class="method-start">9534 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=sample3 status=SKIP method=sample.sample3(java.lang.String)[pri:0, instance:sample....)</span>
-                <span class="method-start">9792 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample3(java.lang.String)[pri:0, instance:sampl...)</span>
-                <span class="method-start">9795 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">sample3(Firefox)</span>
-                <span class="method-start">9795 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=sample3 status=SUCCESS method=sample.sample3(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">13768 ms</span>
+                <span class="method-start">5778 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=sample3 status=SUCCESS method=sample.sample3(java.lang.String)[pri:0, instance:samp...)</span>
-                <span class="method-start">15012 ms</span>
+                <span class="method-name">afterMethod([TestResult name=sample1 status=SUCCESS method=sample.sample1(java.lang.String)[pri:0, instance:samp...)</span>
+                <span class="method-start">8827 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=sample2 status=FAILURE method=sample.sample2(java.lang.String)[pri:0, instance:samp...)</span>
+                <span class="method-start">9487 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">sample3</span>
+                <span class="method-start">10035 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod([TestResult name={null} status=CREATED method=sample.sample3()[pri:0, instance:sample.sample@5032714...)</span>
+                <span class="method-start">10035 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=sample3 status=SUCCESS method=sample.sample3()[pri:0, instance:sample.sample@503271...)</span>
+                <span class="method-start">12845 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">15966 ms</span>
+                <span class="method-start">13031 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">15967 ms</span>
+                <span class="method-start">13033 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">16602 ms</span>
+                <span class="method-start">13286 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -10,7 +10,6 @@
           <include name="beforeSuite"/>
           <include name="afterTest"/>
           <include name="sample1" invocation-numbers="1"/>
-          <include name="sample3" invocation-numbers="1"/>
           <include name="sample2" invocation-numbers="0 1 2"/>
           <include name="afterClass"/>
           <include name="afterSuite"/>

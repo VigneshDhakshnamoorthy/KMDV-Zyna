@@ -1,4 +1,4 @@
-package zyna.common;
+package zyna.util;
 
 import java.time.Duration;
 import java.util.List;

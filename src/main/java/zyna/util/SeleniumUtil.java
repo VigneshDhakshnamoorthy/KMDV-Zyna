@@ -1,4 +1,4 @@
-package zyna.common;
+package zyna.util;
 
 import java.awt.Robot;
 import java.awt.event.InputEvent;
@@ -35,12 +35,14 @@ public class SeleniumUtil {
 
 	private WebDriver driver;
 	private ExtentTest Etest;
+	private String BrowserName;
 	private String testNAme;
 	private int waitTime;
 
 	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time) {
 		this.driver = dr;
 		this.Etest = ext;
+		this.BrowserName = BrowserName;
 		this.waitTime = wait_Time;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
 		driver.manage().deleteAllCookies();
@@ -83,6 +85,10 @@ public class SeleniumUtil {
 	public WebDriver getDriver() {
 		return driver;
 	}
+	
+	public String getBrowserName() {
+		return BrowserName;
+	}
 
 	public String getMethodName() {
 		return testNAme;
@@ -101,7 +107,15 @@ public class SeleniumUtil {
 	public void addScreenshot() {
 		String base64img = "data:image/png;base64," + getScreenshot();
 		String base64imgA = "<a href=\"" + base64img
-				+ "\" data-featherlight=\"image\"><span class=\"badge log fail-bg\">Screenshot Click"
+				+ "\" data-featherlight=\"image\"><span class=\"badge log pass-bg\">Screenshot Click"
+				+ " Here</span></a>";
+		logExtent(base64imgA);
+	}
+	
+	public void addElementScreenshot(By by) {
+		String base64img = "data:image/png;base64," + getScreenshot(by);
+		String base64imgA = "<a href=\"" + base64img
+				+ "\" data-featherlight=\"image\"><span class=\"badge log pass-bg\">Element Screenshot Click"
 				+ " Here</span></a>";
 		logExtent(base64imgA);
 	}
@@ -128,6 +142,10 @@ public class SeleniumUtil {
 
 	public String getScreenshot() {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	}
+	
+	public String getScreenshot(By by) {
+		return ((TakesScreenshot) getElement(by)).getScreenshotAs(OutputType.BASE64);
 	}
 
 	public void logConsole(Object logMessage) {

@@ -1,8 +1,6 @@
 package zyna.config;
 
 import java.io.File;
-import java.nio.file.Paths;
-import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -11,23 +9,26 @@ import org.testng.ITestResult;
 import org.testng.SkipException;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import zyna.base.TestBase;
-import zyna.common.SeleniumUtil;
+import zyna.util.SeleniumUtil;
 
 public class TestngConfig extends TestBase implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		Object[] parameters = result.getParameters();
-		String BName = parameters[0].toString();
+		String BName = null;
+		WebDriver WebD = null;
 		try {
-			WebDriver WebD = new BrowserConfig().getBrowser(BName);
 			if (parameters != null && parameters.length > 0) {
+				BName = parameters[0].toString();
+				WebD = new BrowserConfig().getBrowser(BName);
 				setSelenium(new SeleniumUtil(getExT(result.getName()).createNode(BName), WebD, BName, 15));
 			} else {
+				BName = "Edge";
+				WebD = new BrowserConfig().getBrowser(BName);
 				setSelenium(new SeleniumUtil(Ereport.createTest(result.getName()), WebD, BName, 15));
 			}
 		} catch (Exception e) {

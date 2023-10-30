@@ -11,9 +11,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-import zyna.common.SeleniumUtil;
 import zyna.config.BrowserConfig;
 import zyna.config.TestngConfig;
+import zyna.util.SeleniumUtil;
 
 @Listeners(TestngConfig.class)
 public class TestBase {
