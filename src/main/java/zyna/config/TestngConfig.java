@@ -1,36 +1,63 @@
 package zyna.config;
 
 import java.io.File;
+import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.SkipException;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import zyna.base.TestBase;
-import zyna.util.SeleniumUtil;
+import zyna.util.PdfBoxGenerator;
 
 public class TestngConfig extends TestBase implements ITestListener {
 
+
 	@Override
 	public void onTestStart(ITestResult result) {
+		
+		Object[] parameters = result.getParameters();
+		String BName;
+		if (parameters != null && parameters.length > 0) {
+			BName = parameters[0].toString();
+		}else {
+			BName = "Edge";
+		}
+		try {
+			pdf.set(new PdfBoxGenerator(new File(pdfReportsRoot, result.getName()+"-"+BName+".pdf").getAbsolutePath(), result.getName()+"-"+BName));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		initWeb(result);
+
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
+		try {
+			pdf.get().closeDocument();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
+		try {
+			pdf.get().saveDocument();
+			pdf.get().closeDocument();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
+		
 	}
 
 	@Override

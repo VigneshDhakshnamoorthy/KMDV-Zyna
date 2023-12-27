@@ -25,6 +25,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import zyna.common.Zyna;
 import zyna.config.BrowserConfig;
 import zyna.config.TestngConfig;
+import zyna.util.PdfBoxGenerator;
 import zyna.util.SeleniumUtil;
 
 @Listeners(TestngConfig.class)
@@ -37,6 +38,9 @@ public class TestBase {
 	protected static File projectPathRoot = new File(System.getProperty("user.dir"));
 	protected static File reportRoot = new File(projectPathRoot, "Reports");
 	protected static File extentReportRoot = new File(reportRoot, "ExtentReports");
+	protected static File pdfReportsRoot = new File(reportRoot, "PdfReports");
+
+	protected ThreadLocal<PdfBoxGenerator> pdf = new ThreadLocal<PdfBoxGenerator>();
 
 	@BeforeTest
 	public void beforeTest() {
@@ -116,11 +120,11 @@ public class TestBase {
 			if (parameters != null && parameters.length > 0) {
 				BName = parameters[0].toString();
 				WebD = new BrowserConfig().getBrowser(BName);
-				setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), WebD, BName, 15));
+				setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), WebD, BName, 15, pdf.get()));
 			} else {
 				BName = "Edge";
 				WebD = new BrowserConfig().getBrowser(BName);
-				setSelenium(new SeleniumUtil(getExT(testCaseInformation), WebD, BName, 15));
+				setSelenium(new SeleniumUtil(getExT(testCaseInformation), WebD, BName, 15, pdf.get()));
 			}
 		} catch (Exception e) {
 			setSelenium(new SeleniumUtil(getExT(testCaseInformation).createNode(BName), 15));

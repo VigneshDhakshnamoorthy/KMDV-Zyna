@@ -3,6 +3,7 @@ package zyna.util;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -39,12 +40,15 @@ public class SeleniumUtil {
 	private String BrowserName;
 	private String testNAme;
 	private int waitTime;
+	private PdfBoxGenerator pdf;
 
-	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time) {
+	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time, PdfBoxGenerator pdf) {
 		this.driver = dr;
 		this.Etest = ext;
 		this.BrowserName = BrowserName;
 		this.waitTime = wait_Time;
+		this.pdf = pdf;
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTime));
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -99,16 +103,20 @@ public class SeleniumUtil {
 	public void Log(Object logMessage) {
 		logConsole(logMessage);
 		logPassExtent(logMessage);
+		addPdfText(logMessage);
 	}
 
 	public void Log(Object[] logMessage) {
 		logConsole(logMessage);
 		logPassExtent(logMessage);
+		
 	}
 
 	public void LogInfo(Object logMessage) {
 		logConsole(logMessage);
 		logInfoExtent(logMessage);
+		addPdfText(logMessage);
+
 	}
 
 	public void LogInfo(Object[] logMessage) {
@@ -154,6 +162,24 @@ public class SeleniumUtil {
 
 	public String getScreenshot() {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	}
+	
+	public void addPdfScreenshot() {
+		try {
+			pdf.addImageFromBase64(getScreenshot());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void addPdfText(Object logMessage) {
+		try {
+			pdf.addText(logMessage.toString());
+		} catch (IOException e) {
+			e.printStackTrace();			
+		}
+		
 	}
 
 	public String getScreenshot(By by) {
