@@ -14,7 +14,7 @@ public class sample extends TestBase {
 	public void sample1(String browserName) {
 		CheckoutOverview checkoutOverview = new CheckoutOverview();
 		checkoutOverview.openApp("https://www.saucedemo.com/");
-		ZynaWeb().addScreenshot();
+		ZynaWeb().addPdfScreenshot();
 		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1).clickonCart().QTYcounitem(1)
 				.clickCheckout().sleep(10);
 	}
@@ -42,7 +42,19 @@ public class sample extends TestBase {
 	public void sample3() {
 		CheckoutOverview checkoutOverview = new CheckoutOverview();
 		checkoutOverview.openApp("https://www.saucedemo.com/");
-		checkoutOverview.Login().AddProduct("Sauce Labs Onesie").Check_Cart_item_count(1).clickonCart().QTYcounitem(1)
-				.clickCheckout().sleep(10);
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.Login();
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.AddProduct("Sauce Labs Onesie");
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.Check_Cart_item_count(1);
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.clickonCart();
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.QTYcounitem(1);
+		ZynaWeb().addPdfScreenshot();
+		checkoutOverview.clickCheckout().sleep(2);
+		ZynaWeb().addPdfScreenshot();
+
 	}
 }

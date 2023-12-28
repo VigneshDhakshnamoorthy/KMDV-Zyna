@@ -17,7 +17,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.io.FileOutputStream;
 
-public class PdfBoxGenerator {
+public class PdfReportUtil {
 
     private PDDocument document;
     private PDPage currentPage;
@@ -26,7 +26,7 @@ public class PdfBoxGenerator {
     private Date executionTime;
     private float currentY;
 
-    public PdfBoxGenerator(String filePath, String testCaseName) throws IOException {
+    public PdfReportUtil(String filePath, String testCaseName) throws IOException {
         document = new PDDocument();
         addNewPage();
         saveDocumentInformation();
@@ -88,7 +88,7 @@ public class PdfBoxGenerator {
             imageWidth *= scaleFactor;
             imageHeight *= scaleFactor;
         }
-
+        checkPageHeight(currentY - imageHeight + 30);
         contentStream.drawImage(PDImageXObject.createFromByteArray(document, toByteArray(image), ""), 50, currentY - imageHeight, imageWidth, imageHeight);
         currentY -= imageHeight + 30; // Adjust as needed
         checkPageHeight();
@@ -96,6 +96,15 @@ public class PdfBoxGenerator {
 
     private void checkPageHeight() throws IOException {
         if (currentY < 30) {
+            contentStream.close();
+            addNewPage();
+            initContentStream();
+            addHeader(); // Automatically add header on a new page
+        }
+    }
+    
+    private void checkPageHeight(float futureY) throws IOException {
+        if (futureY < 30) {
             contentStream.close();
             addNewPage();
             initContentStream();

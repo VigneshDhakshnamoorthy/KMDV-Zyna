@@ -10,7 +10,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import zyna.base.TestBase;
-import zyna.util.PdfBoxGenerator;
+import zyna.util.PdfReportUtil;
 
 public class TestngConfig extends TestBase implements ITestListener {
 
@@ -26,7 +26,7 @@ public class TestngConfig extends TestBase implements ITestListener {
 			BName = "Edge";
 		}
 		try {
-			pdf.set(new PdfBoxGenerator(new File(pdfReportsRoot, result.getName()+"-"+BName+".pdf").getAbsolutePath(), result.getName()+"-"+BName));
+			pdf.set(new PdfReportUtil(new File(pdfReportsRoot, result.getName()+"-"+BName+".pdf").getAbsolutePath(), result.getName()+"-"+BName));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -38,6 +38,7 @@ public class TestngConfig extends TestBase implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		try {
+			pdf.get().saveDocument();
 			pdf.get().closeDocument();
 		} catch (IOException e) {
 			e.printStackTrace();

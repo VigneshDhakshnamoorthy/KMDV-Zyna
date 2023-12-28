@@ -25,7 +25,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import zyna.common.Zyna;
 import zyna.config.BrowserConfig;
 import zyna.config.TestngConfig;
-import zyna.util.PdfBoxGenerator;
+import zyna.util.PdfReportUtil;
 import zyna.util.SeleniumUtil;
 
 @Listeners(TestngConfig.class)
@@ -40,7 +40,7 @@ public class TestBase {
 	protected static File extentReportRoot = new File(reportRoot, "ExtentReports");
 	protected static File pdfReportsRoot = new File(reportRoot, "PdfReports");
 
-	protected ThreadLocal<PdfBoxGenerator> pdf = new ThreadLocal<PdfBoxGenerator>();
+	protected ThreadLocal<PdfReportUtil> pdf = new ThreadLocal<PdfReportUtil>();
 
 	@BeforeTest
 	public void beforeTest() {

@@ -40,9 +40,9 @@ public class SeleniumUtil {
 	private String BrowserName;
 	private String testNAme;
 	private int waitTime;
-	private PdfBoxGenerator pdf;
+	private PdfReportUtil pdf;
 
-	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time, PdfBoxGenerator pdf) {
+	public SeleniumUtil(ExtentTest ext, WebDriver dr, String BrowserName, int wait_Time, PdfReportUtil pdf) {
 		this.driver = dr;
 		this.Etest = ext;
 		this.BrowserName = BrowserName;
